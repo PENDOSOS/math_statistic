@@ -119,9 +119,9 @@ distributions = [
         prob_density=lambda x: sci.cauchy.pdf(x, loc=0, scale=1),
     ),
     Distribution(
-        name="laplace",
-        generate=lambda size: sci.laplace.rvs(loc=0, scale=1 / np.sqrt(2), size=size),
-        prob_density=lambda x: sci.laplace.pdf(x, loc=0, scale=1 / np.sqrt(2)),
+        name="student",
+        generate=lambda size: sci.t.rvs(3, loc=0, scale=1 / np.sqrt(2), size=size),
+        prob_density=lambda x: sci.t.pdf(x, 3, loc=0, scale=1 / np.sqrt(2)),
     ),
     Distribution(
         name="poisson",
